@@ -6,12 +6,12 @@
 /*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 10:30:48 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/16 17:09:22 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2020/01/16 17:53:00 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
+
 size_t			ft_count_pieces(char const *s, char c)
 {
 	size_t	i;
@@ -30,7 +30,7 @@ size_t			ft_count_pieces(char const *s, char c)
 	}
 	return (count);
 }
-*/
+
 size_t			ft_len_pieces(char const *s, char c, size_t piece)
 {
 	size_t	len;
@@ -39,7 +39,7 @@ size_t			ft_len_pieces(char const *s, char c, size_t piece)
 
 	i = 0;
 	y = 0;
-	while (y < piece)
+	while (y <= piece)
 	{
 		len = 0;
 		while (s[i] == c && i < ft_strlen(s))
@@ -53,7 +53,7 @@ size_t			ft_len_pieces(char const *s, char c, size_t piece)
 	}
 	return (len);
 }
-/*
+
 char			**ft_split(char const *s, char c)
 {
 	size_t	pieces;
@@ -68,14 +68,15 @@ char			**ft_split(char const *s, char c)
 	while (i < pieces)
 	{
 		len = ft_len_pieces(s, c, i);
-		tab[i] = malloc(len + 1);
+		if (!(tab[i] = malloc((len + 1) * sizeof(char))))
+			return (NULL);
 		i++;
 	}
 	tab[i] = NULL;
 	return (tab);
 }
-*/
+
 int main()
 {
-	printf("%zu", ft_len_pieces("   hola    que tal  ", ' ', 4));
+	printf("%zu", ft_len_pieces("   hola    que tal  ", ' ', 3));
 }
