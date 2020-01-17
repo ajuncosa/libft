@@ -6,7 +6,7 @@
 /*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 15:00:02 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/15 12:32:27 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2020/01/17 13:21:06 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*tmpdst;
 	const char	*tmpsrc;
 
-	if (dst == NULL && src == NULL)
-		return (0);
+	if (dst == src)
+		return (dst);
 	i = 0;
 	tmpdst = (char *)dst;
 	tmpsrc = (const char*)src;
