@@ -19,6 +19,12 @@
 # include <stdio.h>
 # include <string.h>
 
+typedef struct	s_list
+{
+	void		*content;
+	struct s_list	*next;
+}			t_list;
+
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -53,5 +59,6 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
 #endif
