@@ -6,7 +6,7 @@
 /*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 11:21:43 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/20 12:21:51 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2020/01/28 10:41:17 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-	if (!new)
+	if (!new || !alst)
 		return ;
-	if (alst == NULL)
-		alst = &new;
 	new->next = *alst;
 	*alst = new;
 }
