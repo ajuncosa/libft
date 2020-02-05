@@ -6,7 +6,7 @@
 /*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 12:22:21 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/20 12:29:08 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2020/02/05 11:07:59 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_lstsize(t_list *lst)
 	int i;
 
 	i = 0;
-	if (!lst)
-		return (0);
 	while (lst)
 	{
 		lst = lst->next;

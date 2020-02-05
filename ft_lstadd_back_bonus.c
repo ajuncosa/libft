@@ -6,7 +6,7 @@
 /*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 11:12:09 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/30 14:54:30 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2020/02/05 11:22:16 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!new)
-		return ;
-	if (!*lst)
+	if (new)
 	{
-		*lst = new;
-		return ;
+		if (!*lst)
+		{
+			*lst = new;
+			new->next = NULL;
+		}
+		else
+		{
+			last = ft_lstlast(*lst);
+			last->next = new;
+		}
 	}
-	last = ft_lstlast(*lst);
-	last->next = new;
 }
