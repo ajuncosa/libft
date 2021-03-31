@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajuncosa <ajuncosa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cruiz-de <cruiz-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/08 14:06:41 by ajuncosa          #+#    #+#             */
-/*   Updated: 2021/03/05 14:06:40 by ajuncosa         ###   ########.fr       */
+/*   Created: 2021/03/22 12:28:42 by cruiz-de          #+#    #+#             */
+/*   Updated: 2021/03/22 12:29:40 by cruiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		i;
-	char	*copy;
+	int	i;
 
 	i = 0;
-	copy = (char *)s;
-	while (s[i] != '\0')
+	while (s1[i] || s2[i])
 	{
-		if (s[i] == c)
-			return (&copy[i]);
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	if (s[i] == c)
-		return (&copy[i]);
-	else
-		return (NULL);
+	return (0);
 }

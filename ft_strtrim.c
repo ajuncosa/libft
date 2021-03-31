@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ajuncosa <ajuncosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:57:14 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/17 14:14:43 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2021/03/05 14:03:56 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
 	char	*new;
+	size_t	len;
 
 	if (!s1)
 		return (NULL);
+	len = ft_strlen(s1);
 	start = 0;
-	while (ft_strchr(set, s1[start]) && start < ft_strlen(s1))
+	while (ft_strchr(set, s1[start]) && start < len)
 		start++;
-	if (start == ft_strlen(s1))
+	if (start == len)
 	{
 		return (ft_strdup(""));
 	}
-	end = ft_strlen(s1) - 1;
+	end = len - 1;
 	while (ft_strchr(set, s1[end]) && end >= start)
 		end--;
-	if (!(new = malloc(end - start + 2)))
-		return (NULL);
 	new = ft_substr(s1, start, end - start + 1);
 	return (new);
 }

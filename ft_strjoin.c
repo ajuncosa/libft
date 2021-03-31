@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ajuncosa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cruiz-de <cruiz-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 10:53:39 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/01/28 13:19:08 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2021/03/16 12:37:09 by cruiz-de         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1)
 		return (NULL);
-	if (!(new = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
-		return (0);
+	new = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new)
+		return (NULL);
 	i = 0;
 	j = 0;
-	while (j < ft_strlen(s1))
-	{
-		new[i] = s1[j];
-		i++;
-		j++;
-	}
+	while (s1[j] != '\0')
+		new[i++] = s1[j++];
 	j = 0;
-	while (j < ft_strlen(s2))
-	{
-		new[i] = s2[j];
-		i++;
-		j++;
-	}
+	while (s2[j] != '\0')
+		new[i++] = s2[j++];
 	new[i] = '\0';
 	return (new);
 }
