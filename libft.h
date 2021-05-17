@@ -6,7 +6,7 @@
 /*   By: cruiz-de <cruiz-de@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:18:24 by ajuncosa          #+#    #+#             */
-/*   Updated: 2021/03/22 12:19:19 by cruiz-de         ###   ########.fr       */
+/*   Updated: 2021/05/17 13:44:11 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stddef.h>
 # include <stdlib.h>
-# include <stdio.h>
-# include <string.h>
 
 typedef struct s_list
 {
