@@ -1,39 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajuncosa <ajuncosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/27 10:05:51 by ajuncosa          #+#    #+#             */
-/*   Updated: 2021/03/05 13:49:06 by ajuncosa         ###   ########.fr       */
+/*   Created: 2020/01/20 12:47:52 by ajuncosa          #+#    #+#             */
+/*   Updated: 2021/05/28 14:22:24 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*new;
-	t_list	*beginning;
-
-	if (!lst || !f)
+	if (!lst)
 		return (NULL);
-	beginning = ft_lstnew(f(lst->content));
-	if (!beginning)
-		return (NULL);
-	new = beginning;
 	while (lst->next)
-	{
 		lst = lst->next;
-		new->next = ft_lstnew(f(lst->content));
-		if (!new->next)
-		{
-			ft_lstclear(&beginning, del);
-			return (NULL);
-		}
-		new = new->next;
-	}
-	new->next = NULL;
-	return (beginning);
+	return (lst);
 }

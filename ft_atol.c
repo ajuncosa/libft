@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajuncosa <ajuncosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/22 11:12:09 by ajuncosa          #+#    #+#             */
-/*   Updated: 2020/12/18 13:43:47 by ajuncosa         ###   ########.fr       */
+/*   Created: 2021/05/11 14:06:38 by ajuncosa          #+#    #+#             */
+/*   Updated: 2021/05/11 14:14:09 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+long	ft_atol(const char *str)
 {
-	t_list	*last;
+	long	n;
+	int		i;
+	int		sign;
 
-	if (new)
+	i = 0;
+	n = 0;
+	sign = 1;
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
 	{
-		if (!*lst)
-		{
-			*lst = new;
-			new->next = NULL;
-		}
-		else
-		{
-			last = ft_lstlast(*lst);
-			last->next = new;
-			new->next = NULL;
-		}
+		sign = -1;
+		i++;
 	}
+	else if (str[i] == '+')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+		n = n * 10 + (str[i] - '0');
+		i++;
+	}
+	return (n * sign);
 }

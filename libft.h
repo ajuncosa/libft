@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cruiz-de <cruiz-de@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ajuncosa <ajuncosa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:18:24 by ajuncosa          #+#    #+#             */
-/*   Updated: 2021/05/17 13:44:11 by ajuncosa         ###   ########.fr       */
+/*   Updated: 2021/05/11 14:11:35 by ajuncosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define LIBFT_H
 
 # include <unistd.h>
+# include <stddef.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <string.h>
 
 typedef struct s_list
 {
@@ -69,5 +72,6 @@ void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 int				ft_strcmp(char *s1, char *s2);
+long			ft_atol(const char *str);
 
 #endif
